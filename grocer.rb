@@ -1,7 +1,7 @@
+
+#goes through each index and returns a found item, otherwise nil
 def find_item_by_name_in_collection(name, collection)
-  # Implement me first!
-  #
-  # Consult README for inputs and outputs
+  
   counter = 0 
   while counter < collection.length do 
 
@@ -32,10 +32,7 @@ end
 
 
 def consolidate_cart(cart)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This returns a new Array that represents the cart. Don't merely
-  # change `cart` (i.e. mutate) it. It's easier to return a new thing.
+  
   cart_array = []
   cart_hash = {}
   count = 0 
@@ -70,26 +67,15 @@ def consolidate_cart(cart)
        cart_hash["#{item_name}"][:count] += 1 
     end   
     
-    #puts "array result:"
-    #puts cart_array 
-    #puts "hash result:"
-    #puts cart_hash
-    #puts "$$$"
     count += 1 
   end 
-  #puts "Consolidated cart below:"
-  #puts "#{cart_array} \n #{cart_hash} \n ***end consolidated cart***"
+
   return cart_array 
 end
 
-
+#updates cart with coupons applied 
 def apply_coupons(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
-  
-  puts "***Coupon portion starting***"
-  #puts "Coupon length is #{coupons.length}"
+
   coupon_count = 0 
   new_cart = cart #establishes new copy of cart before looping 
   
@@ -118,17 +104,12 @@ def apply_coupons(cart, coupons)
     
     coupon_count += 1 
   end
-  
-  #puts new_cart 
-  puts "***End Coupons"
+
   return new_cart
 end
 
-
+#updates cart with clearance items 
 def apply_clearance(cart)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
   
   new_cart = cart #works on a new cart, can save old cart as comparison 
   
